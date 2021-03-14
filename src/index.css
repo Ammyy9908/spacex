@@ -1,13 +1,184 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  background-color: #cdcdcd;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.programs__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+}
+.card__image {
+  width: 100%;
+  padding: 10px;
+}
+.card__image > img {
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+}
+.card__content > h1 {
+  color: #4a2fa1;
+}
+/* .card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
+
+.sidenav__filters {
+  padding: 10px;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  height: 550px;
+}
+.filter__card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.years__buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.button__filter {
+  padding: 0.5rem;
+  border: 1px solid #dbdbdb;
+  background-color: #2b8b12;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.success__info {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #262626;
+    color: #fff;
+  }
+  .card {
+    background-color: rgb(10, 10, 10);
+  }
+
+  .successfull__launch,
+  .successfull__land {
+    color: rgb(98, 0, 255);
+  }
+  .sidenav__filters {
+    background-color: #262626;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #cdcdcd;
+    color: #262626;
+  }
+  .card {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .successfull__launch,
+  .successfull__land {
+    color: rgb(0, 255, 119);
+  }
+  .card__image {
+    background-color: transparent;
+  }
+}
+
+/*Tablet Media Query*/
+
+@media screen and (max-width: 768px) {
+  .programs__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-gap: 35px;
+    margin: 0 auto;
+  }
+}
+
+/**Mobile Media Query **/
+@media screen and (max-width: 700px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-gap: 35px;
+    margin: 0 auto;
+  }
+
+  .programs__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .sidenav__filters {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
+  .years__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/**Desktop Media Query */
+
+@media (min-width: 768px) {
+  .sidenav__filters {
+    position: sticky;
+    top: 10px;
+  }
 }
