@@ -1,6 +1,7 @@
 import React from "react";
 
-function Card({ filght_name, flight_number, img, year, mission_ids }) {
+function Card({ filght_name, flight_number, img, year, mission_ids, launch }) {
+  console.log(launch);
   return (
     <div className="card">
       <div className="card__image">
@@ -18,8 +19,9 @@ function Card({ filght_name, flight_number, img, year, mission_ids }) {
           <strong>Launch Year</strong>:{year}
         </p>
         <div className="success__info">
-          <span className="successfull__launch">Launch Success:True</span>
-          <span className="successfull__land">Land Success:True</span>
+          <span className="successfull__launch">
+            Launch Success:{launch.toString()}
+          </span>
         </div>
       </div>
     </div>

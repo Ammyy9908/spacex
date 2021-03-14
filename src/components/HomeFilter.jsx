@@ -133,6 +133,7 @@ function HomeFilter({ query }) {
                       img={item.links.mission_patch}
                       year={item.launch_year}
                       mission_ids={item.mission_id}
+                      launch={item.launch_success}
                     />
                   );
                 })}
